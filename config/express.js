@@ -58,7 +58,7 @@ module.exports.express = {
   //
   // If you understand the risks of using the multipart bodyParser,
   // and would like to disable the warning log messages, uncomment:
-  // silenceMultipartWarning: true,
+  silenceMultipartWarning: true
   // ======================================================================
 
 
