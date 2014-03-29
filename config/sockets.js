@@ -17,7 +17,7 @@ module.exports.sockets = {
   onConnect: function(session, socket) {
 
     // By default, do nothing.
-    
+
   },
 
   // This custom onDisconnect function will be run each time a socket disconnects
@@ -27,27 +27,24 @@ module.exports.sockets = {
   },
 
 
-
   // `transports`
   //
   // A array of allowed transport methods which the clients will try to use.
   // The flashsocket transport is disabled by default
   // You can enable flashsockets by adding 'flashsocket' to this list:
   transports: [
-  'websocket',
-  'htmlfile',
-  'xhr-polling',
-  'jsonp-polling'
+    'websocket',
+    'htmlfile',
+    'xhr-polling',
+    'jsonp-polling'
   ],
-
-
 
 
   // Use this option to set the datastore socket.io will use to manage rooms/sockets/subscriptions:
   // default: memory
   adapter: 'memory',
 
-  
+
   // Node.js (and consequently Sails.js) apps scale horizontally.
   // It's a powerful, efficient approach, but it involves a tiny bit of planning.
   // At scale, you'll want to be able to copy your app onto multiple Sails.js servers
@@ -70,7 +67,6 @@ module.exports.sockets = {
   // Worth mentioning is that, if `adapter` config is `redis`, 
   // but host/port is left unset, Sails will try to connect to redis 
   // running on localhost via port 6379 
-
 
 
   // `authorization`
@@ -104,17 +100,17 @@ module.exports.sockets = {
   // use cases, Sails allows you to override the authorization behavior 
   // with your own custom logic by specifying a function, e.g:
   /*
-    authorization: function authorizeAttemptedSocketConnection(reqObj, cb) {
+   authorization: function authorizeAttemptedSocketConnection(reqObj, cb) {
 
-        // Any data saved in `handshake` is available in subsequent requests
-        // from this as `req.socket.handshake.*`
+   // Any data saved in `handshake` is available in subsequent requests
+   // from this as `req.socket.handshake.*`
 
-        //
-        // to allow the connection, call `cb(null, true)`
-        // to prevent the connection, call `cb(null, false)`
-        // to report an error, call `cb(err)`
-    }
-  */
+   //
+   // to allow the connection, call `cb(null, true)`
+   // to prevent the connection, call `cb(null, false)`
+   // to report an error, call `cb(err)`
+   }
+   */
   authorization: true,
 
   // Match string representing the origins that are allowed to connect to the Socket.IO server
