@@ -6,11 +6,35 @@
  * in each of your models.
  */
 
+var uuid = require('node-uuid');
+
 module.exports.models = {
- 
-  // Your app's default connection.
-  // i.e. the name of one of your app's connections (see `config/connections.js`)
-  //
-  // (defaults to localDiskDb)
-  connection: 'localDiskDb'
+
+  connection: 'localDiskDb',
+
+  schema: true,
+
+  attributes: {
+
+    id: {
+      type: 'string',
+      primaryKey: true,
+      unique: true,
+      uuidv4: true
+    }
+  },
+
+  beforeCreate: function(record, next) {
+    'use strict';
+
+    record.id = uuid.v4();
+    next();
+  },
+
+  beforeUpdate: function(record, next) {
+    'use strict';
+
+    delete record.id;
+    next();
+  }
 };
