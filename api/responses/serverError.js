@@ -1,6 +1,6 @@
 /**
  * 500 (Server Error) Handler
- * 
+ *
  * Usage:
  * return res.serverError(err);
  *
@@ -11,7 +11,10 @@
  * error is encountered, Sails will call `res.serverError()`.
  */
 
-module.exports = function serverError (errors) {
+/* jshint unused: false */
+
+module.exports = function serverError(errors) {
+  'use strict';
 
   // Get access to `req`, `res`, `sails`
   var req = this.req;

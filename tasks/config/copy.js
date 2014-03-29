@@ -11,28 +11,33 @@
  * Copies all directories nd files from the .tmp/public directory into a www directory.
  *
  * For usage docs see:
- * 		https://github.com/gruntjs/grunt-contrib-copy
+ *        https://github.com/gruntjs/grunt-contrib-copy
  */
 module.exports = function(grunt) {
+  'use strict';
 
-	grunt.config.set('copy', {
-		dev: {
-			files: [{
-				expand: true,
-				cwd: './assets',
-				src: ['**/*.!(coffee|less)'],
-				dest: '.tmp/public'
-			}]
-		},
-		build: {
-			files: [{
-				expand: true,
-				cwd: '.tmp/public',
-				src: ['**/*'],
-				dest: 'www'
-			}]
-		}
-	});
+  grunt.config.set('copy', {
+    dev: {
+      files: [
+        {
+          expand: true,
+          cwd: './assets',
+          src: ['**/*.!(coffee|less)'],
+          dest: '.tmp/public'
+        }
+      ]
+    },
+    build: {
+      files: [
+        {
+          expand: true,
+          cwd: '.tmp/public',
+          src: ['**/*'],
+          dest: 'www'
+        }
+      ]
+    }
+  });
 
-	grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 };

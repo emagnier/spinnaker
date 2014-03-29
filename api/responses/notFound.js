@@ -3,13 +3,16 @@
  *
  * Usage:
  * return res.notFound();
- * 
+ *
  * NOTE:
  * If no user-defined route, blueprint route, or static file matches
  * the requested URL, Sails will call `res.notFound()`.
  */
 
+/* jshint unused: false */
+
 module.exports = function notFound() {
+  'use strict';
 
   // Get access to `req`, `res`, `sails`
   var req = this.req;

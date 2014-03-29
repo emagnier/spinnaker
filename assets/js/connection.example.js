@@ -16,23 +16,25 @@
  *   *-> http://links.sailsjs.org/docs/pubsub
  */
 
+/* jshint unused: false */
+
 
 // Immediately start connecting
-socket = io.connect();
+var socket = io.connect();
 
 console.log('Connecting Socket.io to Sails.js...');
 
 
 // Attach a listener which fires when a connection is established:
 socket.on('connect', function socketConnected() {
+  'use strict';
 
 
   console.log(
-    'Socket is now connected and globally accessible as `socket`.\n' +
-    'e.g. to send a GET request to Sails via Socket.io, try: \n' +
-    '`socket.get("/foo", function (response) { console.log(response); })`'
+      'Socket is now connected and globally accessible as `socket`.\n' +
+      'e.g. to send a GET request to Sails via Socket.io, try: \n' +
+      '`socket.get("/foo", function (response) { console.log(response); })`'
   );
-
 
 
   // Sends a request to a built-in, development-only route which which
@@ -45,15 +47,14 @@ socket.on('connect', function socketConnected() {
   // NOT the current socket is actually subscribed to them.  The firehose
   // is useful for debugging your app's pubsub workflow-- it should never be
   // used in your actual app.
-  socket.get('/firehose', function nowListeningToFirehose () {
+  socket.get('/firehose', function nowListeningToFirehose() {
 
-	  // Attach a listener which fires every time Sails publishes
-	  // message to the firehose.
-    socket.on('firehose', function newMessageFromSails ( message ) {
+    // Attach a listener which fires every time Sails publishes
+    // message to the firehose.
+    socket.on('firehose', function newMessageFromSails(message) {
       console.log('FIREHOSE (debug): Sails published a message ::\n', message);
     });
   });
-
 
 
   //
@@ -63,7 +64,7 @@ socket.on('connect', function socketConnected() {
   //   "id"  : 1,
   //   "name": "Node.js Austin User Group",
   //   "createdAt": "2014-02-22T19:50:42.547Z",
-	//   "updatedAt": "2014-02-22T19:50:42.547Z"
+  //   "updatedAt": "2014-02-22T19:50:42.547Z"
   // }
   //
   // You can allow sockets to subscribe to this group by building a custom
@@ -71,44 +72,43 @@ socket.on('connect', function socketConnected() {
   // Or, even easier, you can just send a request to the built-in `find` blueprint
   // action, which automatically subscribes the requesting socket to any records it
   // finds:
-  socket.get('/group/1', function ( austinUserGroup ) {
+  socket.get('/group/1', function(austinUserGroup) {
 
-		// If our socket was allowed to fetch information about this group, it is
-		// now also subscribed any publishUpdate(), publishDestroy(), publishAdd(), and
-		// publishRemove() calls from the backend.
+    // If our socket was allowed to fetch information about this group, it is
+    // now also subscribed any publishUpdate(), publishDestroy(), publishAdd(), and
+    // publishRemove() calls from the backend.
 
-		//
-		// > #### v0.10 migration  note:
-		// >
-		// > The `find` blueprint action no longer automatically subscribes sockets to
-		// > `Group.publishCreate()` on the `Group` model itself.  You can still subscribe
-		// > to `Group.publishCreate()` by calling `Group.watch(req)` in your Sails
-		// > controller.
-		//
+    //
+    // > #### v0.10 migration  note:
+    // >
+    // > The `find` blueprint action no longer automatically subscribes sockets to
+    // > `Group.publishCreate()` on the `Group` model itself.  You can still subscribe
+    // > to `Group.publishCreate()` by calling `Group.watch(req)` in your Sails
+    // > controller.
+    //
 
-	  // Now this socket can listen for `group` events.  The event handler will
-	  // be run any time one of this socket's subscribed-to Groups on the server
-	  // publishes a message.
-	  socket.on('group', function (msg) {
+    // Now this socket can listen for `group` events.  The event handler will
+    // be run any time one of this socket's subscribed-to Groups on the server
+    // publishes a message.
+    socket.on('group', function(msg) {
 
-	    // ...
-	    console.log('Received new message from Sails about group #', msg.id);
-	    console.log('Here\'s what happened:',msg.verb);
-	    console.log('Here\'s the relevant data:', msg.data);
-	    // ...
+      // ...
+      console.log('Received new message from Sails about group #', msg.id);
+      console.log('Here\'s what happened:', msg.verb);
+      console.log('Here\'s the relevant data:', msg.data);
+      // ...
 
-	  });
+    });
 
-		//
-	  // > #### v0.10 migration note:
-	  // >
-	  // > The "message" event is no longer sent by Sails when using your
-	  // > models' publish*() methods.  Instead, you can now listen directly
-	  // > to events named after your models (e.g. the `group` listener above)
-	  //
+    //
+    // > #### v0.10 migration note:
+    // >
+    // > The "message" event is no longer sent by Sails when using your
+    // > models' publish*() methods.  Instead, you can now listen directly
+    // > to events named after your models (e.g. the `group` listener above)
+    //
 
   });
-
 
 
 });

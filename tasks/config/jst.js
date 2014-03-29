@@ -8,38 +8,41 @@
  *  speed up template rendering on the client, and reduce bandwidth usage.)
  *
  * For usage docs see:
- * 		https://github.com/gruntjs/grunt-contrib-jst
+ *        https://github.com/gruntjs/grunt-contrib-jst
  *
  */
 
+/* jshint unused: false */
+
 module.exports = function(grunt) {
+  'use strict';
 
-	var templateFilesToInject = [
-		'templates/**/*.html'
-	];
+  var templateFilesToInject = [
+    'templates/**/*.html'
+  ];
 
-	grunt.config.set('jst', {
-		dev: {
+  grunt.config.set('jst', {
+    dev: {
 
-			// To use other sorts of templates, specify a regexp like the example below:
-			// options: {
-			//   templateSettings: {
-			//     interpolate: /\{\{(.+?)\}\}/g
-			//   }
-			// },
+      // To use other sorts of templates, specify a regexp like the example below:
+      // options: {
+      //   templateSettings: {
+      //     interpolate: /\{\{(.+?)\}\}/g
+      //   }
+      // },
 
-			// Note that the interpolate setting above is simply an example of overwriting lodash's
-			// default interpolation. If you want to parse templates with the default _.template behavior
-			// (i.e. using <div></div>), there's no need to overwrite `templateSettings.interpolate`.
+      // Note that the interpolate setting above is simply an example of overwriting lodash's
+      // default interpolation. If you want to parse templates with the default _.template behavior
+      // (i.e. using <div></div>), there's no need to overwrite `templateSettings.interpolate`.
 
 
-			files: {
-				// e.g.
-				// 'relative/path/from/gruntfile/to/compiled/template/destination'  : ['relative/path/to/sourcefiles/**/*.html']
-				'.tmp/public/jst.js': require('../pipeline').templateFilesToInject
-			}
-		}
-	});
+      files: {
+        // e.g.
+        // 'relative/path/from/gruntfile/to/compiled/template/destination'  : ['relative/path/to/sourcefiles/**/*.html']
+        '.tmp/public/jst.js': require('../pipeline').templateFilesToInject
+      }
+    }
+  });
 
-	grunt.loadNpmTasks('grunt-contrib-jst');
+  grunt.loadNpmTasks('grunt-contrib-jst');
 };

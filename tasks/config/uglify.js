@@ -6,17 +6,18 @@
  * Minifies client-side javascript `assets`.
  *
  * For usage docs see:
- * 		https://github.com/gruntjs/grunt-contrib-uglify
+ *        https://github.com/gruntjs/grunt-contrib-uglify
  *
  */
 module.exports = function(grunt) {
+  'use strict';
 
-	grunt.config.set('uglify', {
-		dist: {
-			src: ['.tmp/public/concat/production.js'],
-			dest: '.tmp/public/min/production.js'
-		}
-	});
+  grunt.config.set('uglify', {
+    dist: {
+      src: ['.tmp/public/concat/production.js'],
+      dest: '.tmp/public/min/production.js'
+    }
+  });
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 };

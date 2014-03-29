@@ -6,7 +6,7 @@
  *   'Please choose a valid `password` (6-12 characters)',
  *   '/trial/signup'
  * );
- * 
+ *
  * @param {Array|Object|String} validationErrors
  *      optional errors
  *      usually an array of validation errors from the ORM
@@ -18,8 +18,11 @@
  *      since if this was triggered from an AJAX or socket request, JSON should be sent instead.
  */
 
+/* jshint unused: false */
+
 module.exports = function badRequest(validationErrors, redirectTo) {
-  
+  'use strict';
+
   // Get access to `req`, `res`, `sails`
   var req = this.req;
   var res = this.res;

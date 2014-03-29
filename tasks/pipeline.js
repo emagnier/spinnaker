@@ -1,3 +1,4 @@
+/* jshint strict: false */
 /**
  * grunt/pipeline.js
  *
@@ -57,12 +58,6 @@ var jsFilesToInject = [
 var templateFilesToInject = [
   'templates/**/*.html'
 ];
-
-
-
-
-
-
 
 
 // Prefix relative paths to source files so they point to the proper locations

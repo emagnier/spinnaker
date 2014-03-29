@@ -8,6 +8,7 @@
  *
  */
 module.exports = function(req, res, next) {
+  'use strict';
 
   // User is allowed, proceed to the next policy, 
   // or if this is the last policy, the controller
