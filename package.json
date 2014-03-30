@@ -26,7 +26,9 @@
     "grunt-contrib-jshint": "^0.9.2",
     "jshint-stylish": "^0.1.5",
     "time-grunt": "^0.3.1",
-    "load-grunt-tasks": "^0.4.0"
+    "load-grunt-tasks": "^0.4.0",
+    "q": "^1.0.1",
+    "sails-mongo": "^0.10.0-rc2"
   },
   "scripts": {
     "start": "node app.js",
@@ -38,5 +40,8 @@
     "url": "git://github.com/etienne/node-cms.git"
   },
   "author": "etienne",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-shell": "^0.6.4"
+  }
 }

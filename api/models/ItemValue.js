@@ -14,13 +14,11 @@ module.exports = {
     },
 
     itemVersion: {
-      model: 'itemVersion',
-      required: true
+      model: 'itemVersion'
     },
 
     dataTemplateField: {
-      model: 'dataTemplateField',
-      required: true
+      model: 'dataTemplateField'
     }
   }
 };

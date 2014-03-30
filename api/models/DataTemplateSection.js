@@ -24,8 +24,7 @@ module.exports = {
     },
 
     dataTemplate: {
-      model: 'dataTemplate',
-      required: true
+      model: 'dataTemplate'
     }
   }
 };

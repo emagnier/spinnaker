@@ -28,8 +28,7 @@ module.exports = {
     },
 
     dataTemplateSection: {
-      model: 'dataTemplateSection',
-      required: true
+      model: 'dataTemplateSection'
     }
   }
 };

@@ -21,8 +21,7 @@ module.exports = {
     },
 
     itemLanguage: {
-      model: 'itemLanguage',
-      required: true
+      model: 'itemLanguage'
     },
 
     itemValues: {
