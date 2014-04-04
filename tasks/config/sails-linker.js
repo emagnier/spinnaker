@@ -142,9 +142,9 @@ module.exports = function(grunt) {
         appRoot: '.tmp/public'
       },
       files: {
-        '.tmp/public/index.html': ['.tmp/public/jst.js'],
-        'views/**/*.html': ['.tmp/public/jst.js'],
-        'views/**/*.ejs': ['.tmp/public/jst.js']
+        '.tmp/public/index.html': ['.tmp/public/scripts/templates.js'],
+        'views/**/*.html': ['.tmp/public/scripts/templates.js'],
+        'views/**/*.ejs': ['.tmp/public/scripts/templates.js']
       }
     }
   });

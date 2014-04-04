@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   'use strict';
 
   grunt.registerTask('syncAssets', [
-    'jst:dev',
+    'jst:compile',
     'less:dev',
     'sync:dev',
     'coffee:dev'
