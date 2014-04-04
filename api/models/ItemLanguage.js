@@ -7,20 +7,20 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    item: {
-      model: 'item',
-      required: true
-    },
+        item: {
+            model: 'item',
+            required: true
+        },
 
-    language: {
-      model: 'webSiteLanguage'
-    },
+        language: {
+            model: 'webSiteLanguage'
+        },
 
-    itemVersions: {
-      collection: 'itemVersion',
-      via: 'itemLanguage'
+        itemVersions: {
+            collection: 'itemVersion',
+            via: 'itemLanguage'
+        }
     }
-  }
 };

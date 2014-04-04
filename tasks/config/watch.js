@@ -10,24 +10,24 @@
  *        https://github.com/gruntjs/grunt-contrib-watch
  *
  */
-module.exports = function(grunt) {
-  'use strict';
+module.exports = function (grunt) {
+    'use strict';
 
-  grunt.config.set('watch', {
-    api: {
+    grunt.config.set('watch', {
+        api: {
 
-      // API files to watch:
-      files: ['api/**/*']
-    },
-    assets: {
+            // API files to watch:
+            files: ['api/**/*']
+        },
+        assets: {
 
-      // Assets to watch:
-      files: ['assets/**/*'],
+            // Assets to watch:
+            files: ['assets/**/*'],
 
-      // When assets are changed:
-      tasks: ['syncAssets' , 'linkAssets']
-    }
-  });
+            // When assets are changed:
+            tasks: ['syncAssets' , 'linkAssets']
+        }
+    });
 
-  grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 };

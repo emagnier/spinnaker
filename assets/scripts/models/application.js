@@ -9,16 +9,16 @@ cms.Models = cms.Models || {};
 
         url: '',
 
-        initialize: function() {
+        initialize: function () {
         },
 
         defaults: {
         },
 
-        validate: function(attrs, options) {
+        validate: function (attrs, options) {
         },
 
-        parse: function(response, options)  {
+        parse: function (response, options) {
             return response;
         }
     });

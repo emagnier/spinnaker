@@ -7,18 +7,18 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    value: {
-      type: 'STRING'
-    },
+        value: {
+            type: 'STRING'
+        },
 
-    itemVersion: {
-      model: 'itemVersion'
-    },
+        itemVersion: {
+            model: 'itemVersion'
+        },
 
-    dataTemplateField: {
-      model: 'dataTemplateField'
+        dataTemplateField: {
+            model: 'dataTemplateField'
+        }
     }
-  }
 };

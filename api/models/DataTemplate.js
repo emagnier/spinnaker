@@ -7,35 +7,35 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    name: {
-      type: 'STRING',
-      required: true,
-      notEmpty: true
-    },
+        name: {
+            type: 'STRING',
+            required: true,
+            notEmpty: true
+        },
 
-    iconPath: {
-      type: 'STRING',
-      defaultsTo: ''
-    },
+        iconPath: {
+            type: 'STRING',
+            defaultsTo: ''
+        },
 
-    dataTemplateSections: {
-      collection: 'dataTemplateSection',
-      via: 'dataTemplate'
-    },
+        dataTemplateSections: {
+            collection: 'dataTemplateSection',
+            via: 'dataTemplate'
+        },
 
-    items: {
-      collection: 'item',
-      via: 'dataTemplate'
-    },
+        items: {
+            collection: 'item',
+            via: 'dataTemplate'
+        },
 
-    rootItem: {
-      model: 'webSite'
-    },
+        rootItem: {
+            model: 'webSite'
+        },
 
-    pageLayout: {
-      model: 'pageLayout'
+        pageLayout: {
+            model: 'pageLayout'
+        }
     }
-  }
 };

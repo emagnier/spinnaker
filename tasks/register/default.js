@@ -1,9 +1,9 @@
-module.exports = function(grunt) {
-  'use strict';
+module.exports = function (grunt) {
+    'use strict';
 
-  grunt.registerTask('default', [
-    'compileAssets',
-    'linkAssets',
-    'watch'
-  ]);
+    grunt.registerTask('default', [
+        'compileAssets',
+        'linkAssets',
+        'watch'
+    ]);
 };

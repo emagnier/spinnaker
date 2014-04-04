@@ -7,37 +7,37 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    name: {
-      type: 'STRING',
-      required: true,
-      notEmpty: true
-    },
+        name: {
+            type: 'STRING',
+            required: true,
+            notEmpty: true
+        },
 
-    order: {
-      type: 'INTEGER',
-      defaultsTo: 0,
-      integer: true
-    },
+        order: {
+            type: 'INTEGER',
+            defaultsTo: 0,
+            integer: true
+        },
 
-    hierarchy: {
-      type: 'ARRAY',
-      required: true,
-      array: true
-    },
+        hierarchy: {
+            type: 'ARRAY',
+            required: true,
+            array: true
+        },
 
-    itemLanguages: {
-      collection: 'itemLanguage',
-      via: 'item'
-    },
+        itemLanguages: {
+            collection: 'itemLanguage',
+            via: 'item'
+        },
 
-    dataTemplate: {
-      model: 'dataTemplate'
-    },
+        dataTemplate: {
+            model: 'dataTemplate'
+        },
 
-    pageLayout: {
-      model: 'pageLayout'
+        pageLayout: {
+            model: 'pageLayout'
+        }
     }
-  }
 };

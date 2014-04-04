@@ -10,31 +10,31 @@ var uuid = require('node-uuid');
 
 module.exports.models = {
 
-  connection: 'localDiskDb',
+    connection: 'localDiskDb',
 
-  schema: true,
+    schema: true,
 
-  attributes: {
+    attributes: {
 
-    id: {
-      type: 'string',
-      primaryKey: true,
-      unique: true,
-      uuidv4: true
+        id: {
+            type: 'string',
+            primaryKey: true,
+            unique: true,
+            uuidv4: true
+        }
+    },
+
+    beforeCreate: function (record, next) {
+        'use strict';
+
+        record.id = uuid.v4();
+        next();
+    },
+
+    beforeUpdate: function (record, next) {
+        'use strict';
+
+        delete record.id;
+        next();
     }
-  },
-
-  beforeCreate: function(record, next) {
-    'use strict';
-
-    record.id = uuid.v4();
-    next();
-  },
-
-  beforeUpdate: function(record, next) {
-    'use strict';
-
-    delete record.id;
-    next();
-  }
 };

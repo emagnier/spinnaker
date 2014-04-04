@@ -1,9 +1,9 @@
-module.exports = function(grunt) {
-  'use strict';
+module.exports = function (grunt) {
+    'use strict';
 
-  grunt.registerTask('linkAssets', [
-    'sails-linker:devJs',
-    'sails-linker:devStyles',
-    'sails-linker:devTpl'
-  ]);
+    grunt.registerTask('linkAssets', [
+        'sails-linker:devJs',
+        'sails-linker:devStyles',
+        'sails-linker:devTpl'
+    ]);
 };

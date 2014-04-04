@@ -7,24 +7,24 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    title: {
-      type: 'STRING'
-    },
+        title: {
+            type: 'STRING'
+        },
 
-    iconPath: {
-      type: 'STRING',
-      defaultsTo: ''
-    },
+        iconPath: {
+            type: 'STRING',
+            defaultsTo: ''
+        },
 
-    dataTemplateFields: {
-      collection: 'dataTemplateField',
-      via: 'dataTemplateSection'
-    },
+        dataTemplateFields: {
+            collection: 'dataTemplateField',
+            via: 'dataTemplateSection'
+        },
 
-    dataTemplate: {
-      model: 'dataTemplate'
+        dataTemplate: {
+            model: 'dataTemplate'
+        }
     }
-  }
 };

@@ -7,33 +7,33 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    title: {
-      type: 'STRING',
-      required: true,
-      notEmpty: true
-    },
+        title: {
+            type: 'STRING',
+            required: true,
+            notEmpty: true
+        },
 
-    iconPath: {
-      type: 'STRING',
-      defaultsTo: ''
-    },
+        iconPath: {
+            type: 'STRING',
+            defaultsTo: ''
+        },
 
-    homeItem: {
-      type: 'STRING',
-      defaultsTo: '',
-      uuidv4: true
-    },
+        homeItem: {
+            type: 'STRING',
+            defaultsTo: '',
+            uuidv4: true
+        },
 
-    rootDataTemplates: {
-      collection: 'dataTemplate',
-      via: 'rootItem'
-    },
+        rootDataTemplates: {
+            collection: 'dataTemplate',
+            via: 'rootItem'
+        },
 
-    webSiteLanguages: {
-      collection: 'webSiteLanguage',
-      via: 'webSite'
+        webSiteLanguages: {
+            collection: 'webSiteLanguage',
+            via: 'webSite'
+        }
     }
-  }
 };

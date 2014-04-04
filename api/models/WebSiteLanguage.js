@@ -7,39 +7,39 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    code: {
-      type: 'STRING',
-      required: true,
-      minLength: 2,
-      maxLength: 2,
-      unique: true
-    },
+        code: {
+            type: 'STRING',
+            required: true,
+            minLength: 2,
+            maxLength: 2,
+            unique: true
+        },
 
-    title: {
-      type: 'STRING',
-      required: true,
-      notEmpty: true
-    },
+        title: {
+            type: 'STRING',
+            required: true,
+            notEmpty: true
+        },
 
-    priorityOrder: {
-      type: 'INTEGER',
-      required: true
-    },
+        priorityOrder: {
+            type: 'INTEGER',
+            required: true
+        },
 
-    iconPath: {
-      type: 'STRING',
-      defaultsTo: ''
-    },
+        iconPath: {
+            type: 'STRING',
+            defaultsTo: ''
+        },
 
-    webSite: {
-      model: 'webSite'
-    },
+        webSite: {
+            model: 'webSite'
+        },
 
-    itemLanguages: {
-      collection: 'itemLanguage',
-      via: 'language'
+        itemLanguages: {
+            collection: 'itemLanguage',
+            via: 'language'
+        }
     }
-  }
 };

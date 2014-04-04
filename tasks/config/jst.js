@@ -14,14 +14,14 @@
 
 /* jshint unused: false */
 
-module.exports = function(grunt) {
-  'use strict';
+module.exports = function (grunt) {
+    'use strict';
 
-  grunt.config.set('jst', {
-    compile: {
-      files: {
-        '.tmp/public/scripts/templates.js': ['assets/templates/**/*.ejs'] //require('../pipeline').templateFilesToInject
-      }
-    }
-  });
+    grunt.config.set('jst', {
+        compile: {
+            files: {
+                '.tmp/public/scripts/templates.js': ['assets/templates/**/*.ejs'] //require('../pipeline').templateFilesToInject
+            }
+        }
+    });
 };

@@ -7,28 +7,28 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    name: {
-      type: 'STRING',
-      required: true,
-      notEmpty: true
-    },
+        name: {
+            type: 'STRING',
+            required: true,
+            notEmpty: true
+        },
 
-    type: {
-      type: 'STRING',
-      required: true,
-      notEmpty: true
-    },
+        type: {
+            type: 'STRING',
+            required: true,
+            notEmpty: true
+        },
 
-    lookUp: {
-      type: 'STRING',
-      defaultsTo: '',
-      uuidv4: true
-    },
+        lookUp: {
+            type: 'STRING',
+            defaultsTo: '',
+            uuidv4: true
+        },
 
-    dataTemplateSection: {
-      model: 'dataTemplateSection'
+        dataTemplateSection: {
+            model: 'dataTemplateSection'
+        }
     }
-  }
 };

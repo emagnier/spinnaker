@@ -7,26 +7,26 @@
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    datetime: {
-      type: 'DATETIME',
-      datetime: true,
-      required: true
-    },
+        datetime: {
+            type: 'DATETIME',
+            datetime: true,
+            required: true
+        },
 
-    isPublished: {
-      type: 'BOOLEAN',
-      defaultsTo: false
-    },
+        isPublished: {
+            type: 'BOOLEAN',
+            defaultsTo: false
+        },
 
-    itemLanguage: {
-      model: 'itemLanguage'
-    },
+        itemLanguage: {
+            model: 'itemLanguage'
+        },
 
-    itemValues: {
-      collection: 'itemValue',
-      via: 'itemVersion'
+        itemValues: {
+            collection: 'itemValue',
+            via: 'itemVersion'
+        }
     }
-  }
 };
