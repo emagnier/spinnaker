@@ -7,9 +7,7 @@ A CMS written in JavaScript, based on Node.js, Sails.js, Angular and Polymer.
 
 ---
 
-## DataBase
-
-### DB Connection
+## Config
 
 Sample `config/local.js` file:
 
