@@ -21,9 +21,13 @@ module.exports = {
             integer: true
         },
 
-        hierarchy: {
+        parentItem: {
+            model: 'item'
+        },
+
+        parentItems: {
             type: 'ARRAY',
-            required: true,
+            defaultsTo: [],
             array: true
         },
 

@@ -5,6 +5,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/models
  */
 
+var generateUUID = require('node-uuid');
+
 module.exports = {
 
     attributes: {
@@ -29,11 +31,19 @@ module.exports = {
         rootDataTemplates: {
             collection: 'dataTemplate',
             via: 'rootItem'
-        },
-
-        webSiteLanguages: {
-            collection: 'webSiteLanguage',
-            via: 'webSite'
         }
+    },
+
+    beforeCreate: function (record, next) {
+        'use strict';
+
+        // TODO: Better error response in JSON.
+        WebSite.find().limit(1).exec(function (err, site) {
+            if (err) return next(err);
+            if (site.length) return next(new Error('You can create only 1 site.'));
+
+            record.id = generateUUID.v4();
+            return next();
+        });
     }
 };

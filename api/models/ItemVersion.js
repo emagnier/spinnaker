@@ -9,15 +9,10 @@ module.exports = {
 
     attributes: {
 
-        datetime: {
+        createdAt: {
             type: 'DATETIME',
             datetime: true,
             required: true
-        },
-
-        isPublished: {
-            type: 'BOOLEAN',
-            defaultsTo: false
         },
 
         itemLanguage: {

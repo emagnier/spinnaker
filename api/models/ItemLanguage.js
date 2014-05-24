@@ -9,6 +9,12 @@ module.exports = {
 
     attributes: {
 
+        path: {
+            type: 'STRING',
+            unique: true,
+            required: true
+        },
+
         item: {
             model: 'item',
             required: true

@@ -6,18 +6,20 @@
  * in each of your models.
  */
 
-var uuid = require('node-uuid');
+var generateUUID = require('node-uuid');
 
 module.exports.models = {
 
-    connection: 'localDiskDb',
+    connection: 'mongodbServer',
 
     schema: true,
+
+    autoPK: false,
 
     attributes: {
 
         id: {
-            type: 'string',
+            type: 'STRING',
             primaryKey: true,
             unique: true,
             uuidv4: true
@@ -27,7 +29,7 @@ module.exports.models = {
     beforeCreate: function (record, next) {
         'use strict';
 
-        record.id = uuid.v4();
+        record.id = generateUUID.v4();
         next();
     },
 
