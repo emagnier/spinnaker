@@ -8,7 +8,7 @@
  * For usage docs see:
  *        https://github.com/gruntjs/grunt-contrib-cssmin
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.config.set('cssmin', {
@@ -17,6 +17,4 @@ module.exports = function (grunt) {
             dest: '.tmp/public/min/production.css'
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
 };

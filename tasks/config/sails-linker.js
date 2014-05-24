@@ -11,7 +11,7 @@
  *        https://github.com/Zolmeister/grunt-sails-linker
  *
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.config.set('sails-linker', {
@@ -148,6 +148,4 @@ module.exports = function (grunt) {
             }
         }
     });
-
-    grunt.loadNpmTasks('grunt-sails-linker');
 };

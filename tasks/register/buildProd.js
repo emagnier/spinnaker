@@ -1,13 +1,12 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.registerTask('buildProd', [
-        'compileAssets',
-        'concat',
-        'uglify',
-        'cssmin',
-        'linkAssetsBuildProd',
-        'clean:build',
-        'copy:build'
+        'compileProdAssets',
+        'sails-linker:prodJsRelative',
+        'sails-linker:prodStylesRelative',
+        'sails-linker:devTpl',
+        'clean:prod',
+        'copy:prod'
     ]);
 };

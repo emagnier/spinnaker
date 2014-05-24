@@ -10,7 +10,7 @@
  * For usage docs see:
  *        https://github.com/gruntjs/grunt-contrib-concat
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.config.set('concat', {
@@ -23,6 +23,4 @@ module.exports = function (grunt) {
             dest: '.tmp/public/concat/production.css'
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-concat');
 };

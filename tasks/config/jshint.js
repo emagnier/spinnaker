@@ -1,7 +1,7 @@
 /**
  * Validate files with JSHint.
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.config.set('jshint', {
@@ -9,13 +9,19 @@ module.exports = function (grunt) {
             jshintrc: '.jshintrc',
             reporter: require('jshint-stylish')
         },
-        files: [
+        all: [
             'Gruntfile.js',
             'tasks/**/*.js',
             'api/{,*/}*.js',
             'assets/**/*.js',
             '!assets/bower_components/**',
             '!assets/**/*.io.js'
-        ]
+        ],
+        test: {
+            options: {
+                jshintrc: 'test/.jshintrc'
+            },
+            src: ['test/spec/{,*/}*.js']
+        }
     });
 };

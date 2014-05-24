@@ -1,10 +1,12 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.registerTask('build', [
-        'compileAssets',
-        'linkAssetsBuild',
-        'clean:build',
-        'copy:build'
+        'compileDevAssets',
+        'sails-linker:devJsRelative',
+        'sails-linker:devStylesRelative',
+        'sails-linker:devTpl',
+        'clean:prod',
+        'copy:prod'
     ]);
 };

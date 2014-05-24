@@ -13,7 +13,7 @@
  * For usage docs see:
  *        https://github.com/gruntjs/grunt-contrib-copy
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.config.set('copy', {
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                 }
             ]
         },
-        build: {
+        prod: {
             files: [
                 {
                     expand: true,
@@ -38,6 +38,4 @@ module.exports = function (grunt) {
             ]
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-copy');
 };

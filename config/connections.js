@@ -52,9 +52,9 @@ module.exports.connections = {
         adapter: 'sails-mongo',
         host: 'localhost',
         port: 27017,
-        user: 'username',
+        user: '',
         password: '',
-        database: 'node-cms'
+        database: 'spinnaker'
     },
 
     // PostgreSQL is another officially supported relational database.

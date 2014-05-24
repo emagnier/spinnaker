@@ -9,7 +9,7 @@
  *        https://github.com/gruntjs/grunt-contrib-uglify
  *
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     grunt.config.set('uglify', {
@@ -18,6 +18,4 @@ module.exports = function (grunt) {
             dest: '.tmp/public/min/production.js'
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 };
