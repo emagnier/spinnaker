@@ -1,0 +1,24 @@
+<div class="row">
+
+    <form action="" ng-submit="saveItem()" method="POST" role="form">
+
+        <legend>New Item</legend>
+
+        <div class="form-group">
+            <label for="">Item Name</label>
+            <input type="text" ng-model="item.name" class="form-control" id="" placeholder="Input field"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <h1>My Item List!!</h1>
+
+    <ul>
+        <li ng-repeat="item in itemList">
+            {{ item.name }}
+            <button ng-click="editItem(item)">Edit</button>
+        </li>
+    </ul>
+
+</div>

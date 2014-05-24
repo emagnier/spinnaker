@@ -3,10 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "~2.1.0",
-    "backbone": "~1.1.2",
     "underscore": "~1.6.0",
-    "modernizr": "~2.7.2",
-    "backbone-to-sails": "~0.10.0"
+    "modernizr": "~2.8.2"
   },
   "devDependencies": {}
 }
