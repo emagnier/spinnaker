@@ -1,12 +1,17 @@
-node-cms
-========
+Spinnaker
+=========
 
-A CMS written in JavaScript, based on Node.js, Sails.js, Backbone and Polymer.
+A CMS written in JavaScript, based on Node.js, Sails.js, Angular and Polymer.
 
+### CURRENTLY IN ACTIVE DEVELOPMENT - NOT READY FOR PRODUCTION USE YET
+
+---
 
 ## DataBase
 
 ### DB Connection
+
+Sample `config/local.js` file:
 
 ```js
 module.exports = {
@@ -22,32 +27,9 @@ module.exports = {
             port: 27017,
             user: '',
             password: '',
-            database: 'node-cms',
+            database: 'spinnaker',
             schema: true
         }
     }
 };
-```
-
-### Update the Sample Data
-
-#### Source Control -->  MongodDB
-
-Go to the `LVLWebsite` folder, then run:
-```
-mongorestore sample_data --drop
-```
-
-#### MongodDB --> Source Control
-
-Go to the `LVLWebsite` folder, then run:
-```
-mongodump --out sample_data --db lvl-website
-```
-
-## Backup the Node.js & Bower dependencies
-
-```
-tar -zcvf node_modules.tgz node_modules
-tar -zcvf bower_components.tgz assets/bower_components
 ```
