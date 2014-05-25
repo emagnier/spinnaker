@@ -1,7 +1,7 @@
 {
   "name": "node-cms",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A CMS based on Node.js and Sails.js.",
   "keywords": [],
   "dependencies": {
