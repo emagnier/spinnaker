@@ -7,20 +7,13 @@ module.exports = function(grunt) {
     grunt.config.set('concurrent', {
         dev: [
             'sass:dev',
-            'jst:compile',
-            'sync:dev'
-        ],
-        test: [
-            'sass:dev',
-            'jst:compile',
-            'sync:dev'
+            'jst:compile'
         ],
         prod: [
             'sass:prod',
             'imagemin',
             'svgmin',
-            'jst:compile',
-            'sync:dev'
+            'jst:compile'
         ]
     });
 };

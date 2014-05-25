@@ -4,15 +4,18 @@ module.exports = function(grunt) {
     grunt.registerTask('compileProdAssets', [
         'clean',
         //'wiredep',
+        'copy:dev',
         'concurrent:prod',
         'autoprefixer',
-        'copy:dev',
+        'ngmin',
         'copy:prod',
-        //'concat',
-        //'uglify',
-        //'cssmin',
         'sails-linker:prodJs',
         'sails-linker:prodStyles',
-        'sails-linker:devTpl'
+        'sails-linker:devTpl',
+        //'cdnify',
+        //'uglify',
+        //'rev',
+        //'usemin',
+        //'htmlmin'
     ]);
 };
