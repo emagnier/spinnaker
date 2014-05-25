@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('nodeCmsApp')
+angular.module('spinnakerApp')
     .controller('ItemCtrl', function ($scope, $resource) {
 
         var Item = $resource('http://localhost:1337/item', {

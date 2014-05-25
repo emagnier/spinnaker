@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('nodeCmsApp')
+angular.module('spinnakerApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

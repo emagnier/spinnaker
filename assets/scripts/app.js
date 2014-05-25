@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('nodeCmsApp', [
+  .module('spinnakerApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',

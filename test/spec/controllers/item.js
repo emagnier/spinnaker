@@ -3,7 +3,7 @@
 describe('Controller: ItemCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('nodeCmsApp'));
+  beforeEach(module('spinnakerApp'));
 
   var ItemCtrl,
     scope;
