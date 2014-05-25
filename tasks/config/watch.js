@@ -42,7 +42,10 @@ module.exports = function(grunt) {
         },
         sass: {
             files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-            tasks: ['sass:dev', 'autoprefixer']
+            tasks: ['sass:dev', 'autoprefixer'],
+            options: {
+                livereload: true
+            }
         },
         gruntfile: {
             files: [
@@ -52,7 +55,10 @@ module.exports = function(grunt) {
         },
         jst: {
             files: ['<%= yeoman.app %>/templates/{,*/}*.ejs'],
-            tasks: ['jst:compile']
+            tasks: ['jst:compile'],
+            options: {
+                livereload: true
+            }
         },
         livereload: {
             files: [
