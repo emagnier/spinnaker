@@ -1,5 +1,5 @@
 /**
- * Language.js
+ * ContentLanguage.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/#!documentation/models
@@ -50,7 +50,7 @@ module.exports = {
         }
 
         // Determine the priority order of a new language.
-        WebSiteLanguage.find(function (err, languages) {
+        ContentLanguage.find(function (err, languages) {
             if (err) return next(err);
 
             record.priorityOrder = 0;
@@ -66,7 +66,7 @@ module.exports = {
         'use strict';
 
         // TODO: The unique rule seems to be not checked by the ORM.
-        WebSiteLanguage.findOne({code: record.code}).exec(function (err, found) {
+        ContentLanguage.findOne({code: record.code}).exec(function (err, found) {
             if (err) return next(err);
             if (found) return next(new Error('Code must be unique.'));
 

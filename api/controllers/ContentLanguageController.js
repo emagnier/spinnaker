@@ -1,5 +1,5 @@
 /**
- * WebSiteLanguageController.js
+ * ContentLanguageController.js
  *
  * @description ::
  * @docs        :: http://sailsjs.org/#!documentation/controllers

@@ -24,9 +24,7 @@
     "angular": false,
     "_": false,
     "io": true,
-    "debug": true,
-    "define": true,
-    "requirejs": true,
+    "ContentLanguage": true,
     "DataTemplate": true,
     "DataTemplateField": true,
     "DataTemplateSection": true,
@@ -35,7 +33,6 @@
     "ItemValue": true,
     "ItemVersion": true,
     "PageLayout": true,
-    "WebSite": true,
-    "WebSiteLanguage": true
+    "WebSite": true
   }
 }
