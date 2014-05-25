@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spinnakerApp')
-    .controller('ItemCtrl', function ($scope, $resource) {
+    .controller('ItemCtrl', function($scope, $resource) {
 
         var Item = $resource('http://localhost:1337/item', {
             id: '@id'
@@ -14,11 +14,11 @@ angular.module('spinnakerApp')
         $scope.item = new Item();
         $scope.itemList = Item.query();
 
-        $scope.saveItem = function () {
+        $scope.saveItem = function() {
 
             var method = $scope.item.id ? '$update' : '$save';
 
-            $scope.item[method]({}, function () {
+            $scope.item[method]({}, function() {
 
                 $scope.item = new Item();
                 $scope.itemList = Item.query();
@@ -27,7 +27,7 @@ angular.module('spinnakerApp')
             });
         };
 
-        $scope.editItem = function (item) {
+        $scope.editItem = function(item) {
             $scope.item = item;
         };
 

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css({.tmp,app}) styles/main.css -->
+    <!-- build:css({.tmp,assets}) styles/main.css -->
     <link rel="stylesheet" href="/styles/main.css">
     <!-- endbuild -->
 </head>
@@ -76,11 +76,9 @@
 
 -->
 
-<!--SCRIPTS-->
 <script src="/js/socket.io.js"></script>
 <script src="/js/sails.io.js"></script>
-<script src="/js/connection.example.js"></script>
-<!--SCRIPTS END-->
+<!--<script src="/js/connection.example.js"></script>-->
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -121,13 +119,19 @@
 <script src="/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
 <script src="/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
 <script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/angular-sails/dist/angular-sails.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!-- build:js({.tmp,assets}) scripts/scripts.js -->
 <script src="/scripts/app.js"></script>
-<script src="/scripts/controllers/main.js"></script>
+<script src="/scripts/controllers/contentLanguage.js"></script>
+<script src="/scripts/controllers/dataTemplate.js"></script>
 <script src="/scripts/controllers/item.js"></script>
+<script src="/scripts/controllers/main.js"></script>
+<script src="/scripts/controllers/pageLayout.js"></script>
+<script src="/scripts/controllers/route.js"></script>
+<script src="/scripts/controllers/webSite.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -1,1 +1,16 @@
-<div class="container" ng-view=""></div>
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li><a ng-href="#">Home</a></li>
+            <li><a ng-href="#/item">Items</a></li>
+            <li><a ng-href="#/route">Routes</a></li>
+            <li><a ng-href="#/datatemplate">Data Templates</a></li>
+            <li><a ng-href="#/pagelayout">Page Layouts</a></li>
+            <li><a ng-href="#/contentlanguage">Languages</a></li>
+            <li><a ng-href="#/website">WebSite</a></li>
+        </ul>
+        <h3 class="text-muted">Spinnaker</h3>
+    </div>
+
+    <div class="content" ng-view=""></div>
+</div>
