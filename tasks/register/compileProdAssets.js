@@ -3,8 +3,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('compileProdAssets', [
         'clean',
-        //'wiredep',
         'copy:dev',
+        'wiredep',
         'concurrent:prod',
         'autoprefixer',
         'ngmin',

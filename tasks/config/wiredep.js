@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     grunt.config.set('wiredep', {
         app: {
             src: ['<%= yeoman.views %>/layout.ejs'],
-            ignorePath: '<%= yeoman.views %>/'
+            ignorePath: '../assets'
         },
         sass: {
             src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],

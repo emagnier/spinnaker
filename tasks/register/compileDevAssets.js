@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         'newer:jshint',
         'clean:dev',
         'copy:dev',
-        //'wiredep',
+        'wiredep',
         'concurrent:dev',
         'autoprefixer'
     ]);
