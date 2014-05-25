@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         },
         bower: {
             files: ['bower.json'],
-            tasks: [/*'bowerInstall',*/ 'sync:dev']
+            tasks: ['wiredep', 'sync:dev']
         },
         js: {
             files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
