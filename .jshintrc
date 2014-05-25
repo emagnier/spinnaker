@@ -33,6 +33,7 @@
     "ItemValue": true,
     "ItemVersion": true,
     "PageLayout": true,
+    "Route": true,
     "WebSite": true
   }
 }
