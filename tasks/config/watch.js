@@ -20,8 +20,11 @@ module.exports = function(grunt) {
         assets: {
             files: [
                 '<%= yeoman.app %>/**/*',
-                '!<%= yeoman.app %>/**/*.{scss,sass,js,ejs}',
-                '!<%= yeoman.app %>/bower_components/**'
+                '!<%= yeoman.app %>/bower_components/**',
+                '!<%= yeoman.app %>/scripts/{,*/}*.js',
+                '!<%= yeoman.app %>/styles/{,*/}*.{scss,sass}',
+                '!<%= yeoman.app %>/views/{,*/}*.html',
+                '!<%= yeoman.app %>/templates/{,*/}*.ejs'
             ],
             tasks: ['sync:dev']
         },
@@ -52,6 +55,13 @@ module.exports = function(grunt) {
                 'Gruntfile.js',
                 'tasks/*.js'
             ]
+        },
+        htmlViews: {
+            files: ['<%= yeoman.app %>/views/{,*/}*.html'],
+            tasks: ['sync:dev'],
+            options: {
+                livereload: true
+            }
         },
         jst: {
             files: ['<%= yeoman.app %>/templates/{,*/}*.ejs'],
