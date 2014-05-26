@@ -1,13 +1,13 @@
 <div class="container">
     <div class="header">
-        <ul class="nav nav-pills pull-right">
-            <li><a ng-href="#">Home</a></li>
-            <li><a ng-href="#/item">Items</a></li>
-            <li><a ng-href="#/route">Routes</a></li>
-            <li><a ng-href="#/datatemplate">Data Templates</a></li>
-            <li><a ng-href="#/pagelayout">Page Layouts</a></li>
-            <li><a ng-href="#/language">Languages</a></li>
-            <li><a ng-href="#/website">WebSite</a></li>
+        <ul class="nav nav-pills pull-right" ng-controller="HeaderCtrl">
+            <li ng-class="{ active: isActive('/')}"><a href="#">Home</a></li>
+            <li ng-class="{ active: isActive('/item')}"><a href="#/item">Items</a></li>
+            <li ng-class="{ active: isActive('/route')}"><a href="#/route">Routes</a></li>
+            <li ng-class="{ active: isActive('/datatemplate')}"><a href="#/datatemplate">Data Templates</a></li>
+            <li ng-class="{ active: isActive('/pagelayout')}"><a href="#/pagelayout">Page Layouts</a></li>
+            <li ng-class="{ active: isActive('/language')}"><a href="#/language">Languages</a></li>
+            <li ng-class="{ active: isActive('/website')}"><a href="#/website">WebSite</a></li>
         </ul>
         <h3 class="text-muted">Spinnaker</h3>
     </div>
