@@ -21,10 +21,10 @@
   "strict": true,
   "trailing": true,
   "globals": {
-    "angular": false,
-    "_": false,
+    "sails": true,
+    "angular": true,
+    "_": true,
     "io": true,
-    "ContentLanguage": true,
     "DataTemplate": true,
     "DataTemplateField": true,
     "DataTemplateSection": true,
@@ -32,6 +32,7 @@
     "ItemLanguage": true,
     "ItemValue": true,
     "ItemVersion": true,
+    "Language": true,
     "PageLayout": true,
     "Route": true,
     "WebSite": true

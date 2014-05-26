@@ -20,7 +20,7 @@ module.exports = {
         },
 
         language: {
-            model: 'contentLanguage'
+            model: 'language'
         },
 
         itemVersions: {

@@ -14,9 +14,9 @@ angular
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
             })
-            .when('/contentlanguage', {
-              templateUrl: 'views/contentLanguage.html',
-              controller: 'ContentLanguageCtrl'
+            .when('/language', {
+              templateUrl: 'views/language.html',
+              controller: 'LanguageCtrl'
             })
             .when('/datatemplate', {
               templateUrl: 'views/dataTemplate.html',
@@ -35,8 +35,8 @@ angular
               controller: 'RouteCtrl'
             })
             .when('/website', {
-              templateUrl: 'views/webSite.html',
-              controller: 'WebSiteCtrl'
+              templateUrl: 'views/website.html',
+              controller: 'WebsiteCtrl'
             })
             .otherwise({
                 redirectTo: '/'

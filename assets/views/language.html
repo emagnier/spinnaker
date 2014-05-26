@@ -1,0 +1,153 @@
+<h3>Languages</h3>
+<table class='table table-striped'>
+    <tr>
+        <th>Title</th>
+        <th>Code</th>
+        <th>Icon Path</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="language in languageList | orderBy:'code'">
+        <td>
+            <a data-toggle="modal"
+               data-target="#language_editModal"
+               ng-click="editLanguage(language)">
+                {{ language.title }}
+            </a>
+        </td>
+        <td>
+            <a data-toggle="modal"
+               data-target="#language_editModal"
+               ng-click="editLanguage(language)">
+                {{ language.code }}
+            </a>
+        </td>
+        <td>
+            <code>{{ language.iconPath }}</code>
+        </td>
+        <td class="text-align-right">
+            <button data-toggle="modal"
+                    data-target="#language_deleteModal"
+                    ng-click="confirmDeleteLanguage(language)"
+                    class="btn btn-danger btn-xs">
+                <i class="fa fa-trash-o"></i> Delete
+            </button>
+        </td>
+    </tr>
+</table>
+
+
+<button class="btn btn-success btn-sm"
+        data-toggle="modal"
+        data-target="#language_editModal"
+        ng-click="newLanguage()">
+    <i class="fa fa-plus"></i>
+    Add a Language
+</button>
+
+
+<div id="language_editModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <form action="" ng-submit="saveLanguage()" method="POST" role="form" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">
+                    {{ editMode ? 'Edit: ' + currentLanguageTitle : 'Create a new Language' }}
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" ng-class="{'has-error': languageErrors.title}">
+                    <label class="control-label" for="language_edit_title">Title</label>
+                    <input type="text"
+                           ng-model="language.title"
+                           id="language_edit_title"
+                           class="form-control"
+                           required
+                           placeholder="e.g.: English"/>
+                    <span ng-repeat-start="error in languageErrors.title" ng-repeat-end class="help-block">
+                        {{ error.message }}
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': languageErrors.code}">
+                    <label class="control-label" for="language_edit_code">Code</label>
+                    <input type="text"
+                           ng-model="language.code"
+                           id="language_edit_code"
+                           class="form-control"
+                           required
+                           placeholder="e.g.: en"/>
+                    <span ng-repeat-start="error in languageErrors.code" ng-repeat-end class="help-block">
+                        {{ error.message }}
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': languageErrors.iconPath}">
+                    <label class="control-label" for="language_edit_iconPath">Icon Path</label>
+                    <input type="text" ng-model="language.iconPath" id="language_edit_iconPath" class="form-control"/>
+                    <span ng-repeat-start="error in languageErrors.iconPath" ng-repeat-end class="help-block">
+                        {{ error.message }}
+                    </span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset"
+                        class="btn btn-default"
+                        data-dismiss="modal">
+                    <i class="fa fa-chevron-left"></i> Cancel
+                </button>
+                <button type="submit"
+                        class="btn"
+                        ng-class="{'btn-success': !editMode, 'btn-primary': editMode}">
+                    <i class="fa fa-floppy-o"></i> Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="language_deleteModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <form action="" ng-submit="deleteLanguage(language)" method="POST" role="form" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">
+                    Are you ABSOLUTELY sure?
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-warning">
+                    Unexpected bad things will happen if you don't read this!
+                </p>
+
+                <p>
+                    This action <strong>CANNOT</strong> be undone. This will delete the
+                    <strong>{{ language.title }}</strong> language, and all the associated content permanently.
+                </p>
+
+                <p>
+                    Please type in the name of the language to confirm.
+                </p>
+
+                <div class="form-group">
+                    <input type="text"
+                           ng-model="languageTitleToDelete"
+                           id="language_delete_title"
+                           class="form-control"
+                           required
+                           placeholder=""/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset"
+                        class="btn btn-default"
+                        data-dismiss="modal">
+                    <i class="fa fa-chevron-left"></i> Cancel
+                </button>
+                <button type="submit"
+                        ng-disabled="languageTitleToDelete !== language.title"
+                        class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i> I understand the consequences, delete this language
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

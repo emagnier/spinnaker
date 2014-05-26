@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: PagelayoutCtrl', function () {
+describe('Controller: PageLayoutCtrl', function () {
 
   // load the controller's module
   beforeEach(module('spinnakerApp'));

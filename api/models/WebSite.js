@@ -1,5 +1,5 @@
 /**
- * WebSite.js
+ * Website.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/#!documentation/models
@@ -31,6 +31,12 @@ module.exports = {
         rootDataTemplates: {
             collection: 'dataTemplate',
             via: 'rootItem'
+        },
+
+        languages: {
+            collection: 'language',
+            via: 'websites',
+            dominant:true
         }
     },
 

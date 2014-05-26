@@ -1,5 +1,5 @@
 /**
- * ContentLanguage.js
+ * Language.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/#!documentation/models
@@ -26,11 +26,6 @@ module.exports = {
             notEmpty: true
         },
 
-        priorityOrder: {
-            type: 'INTEGER',
-            required: true
-        },
-
         iconPath: {
             type: 'STRING',
             defaultsTo: ''
@@ -39,34 +34,27 @@ module.exports = {
         itemLanguages: {
             collection: 'itemLanguage',
             via: 'language'
+        },
+
+        websites: {
+            collection: 'website',
+            via: 'languages',
+            dominant:true
         }
     },
 
-    beforeValidate: function (record, next) {
+    afterValidate: function (record, next) {
         'use strict';
 
-        if (typeof record.priorityOrder !== 'undefined') {
-            return next();
-        }
-
-        // Determine the priority order of a new language.
-        ContentLanguage.find(function (err, languages) {
-            if (err) return next(err);
-
-            record.priorityOrder = 0;
-            if (languages.length > 0) {
-                record.priorityOrder = parseInt(_.max(_.pluck(languages, 'priorityOrder')), 10) + 1;
-            }
-
-            return next();
-        });
+        record.code = record.code.toLowerCase();
+        next();
     },
 
     beforeCreate: function (record, next) {
         'use strict';
 
         // TODO: The unique rule seems to be not checked by the ORM.
-        ContentLanguage.findOne({code: record.code}).exec(function (err, found) {
+        Language.findOne({code: record.code}).exec(function (err, found) {
             if (err) return next(err);
             if (found) return next(new Error('Code must be unique.'));
 

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: DatatemplateCtrl', function () {
+describe('Controller: DataTemplateCtrl', function () {
 
   // load the controller's module
   beforeEach(module('spinnakerApp'));

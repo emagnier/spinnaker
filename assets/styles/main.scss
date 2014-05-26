@@ -29,3 +29,19 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 .content {
     padding: 20px 0;
 }
+
+a[ng-click] {
+    cursor: pointer;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+a,
+button {
+
+    &:not(.btn-xs) .fa:first-child {
+        margin-right: 4px;
+    }
+}
