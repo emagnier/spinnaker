@@ -1,1 +1,152 @@
-<p>This is the pageLayout view.</p>
+<h3>Page Layout</h3>
+<table class='table table-striped'>
+    <tr>
+        <th>Name</th>
+        <th>Layout Path</th>
+        <th>Icon Path</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="pageLayout in pageLayoutList | orderBy:'name'">
+        <td>
+            <a data-toggle="modal"
+               data-target="#pageLayout_editModal"
+               ng-click="editPageLayout(pageLayout)">
+                {{ pageLayout.name }}
+            </a>
+        </td>
+        <td>
+            <code>{{ pageLayout.layoutPath }}</code>
+        </td>
+        <td>
+            <code>{{ pageLayout.iconPath }}</code>
+        </td>
+        <td class="text-align-right">
+            <button data-toggle="modal"
+                    data-target="#pageLayout_deleteModal"
+                    ng-click="confirmDeletePageLayout(pageLayout)"
+                    class="btn btn-danger btn-xs">
+                <i class="fa fa-trash-o"></i> Delete
+            </button>
+        </td>
+    </tr>
+</table>
+
+
+<button class="btn btn-success btn-sm"
+        data-toggle="modal"
+        data-target="#pageLayout_editModal"
+        ng-click="newPageLayout()">
+    <i class="fa fa-plus"></i>
+    Add a PageLayout
+</button>
+
+
+<div id="pageLayout_editModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <form action="" ng-submit="savePageLayout()" method="POST" role="form" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">
+                    {{ editMode ? 'Edit: ' + currentPageLayoutTitle : 'Create a new Page Layout' }}
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" ng-class="{'has-error': pageLayoutErrors.name}">
+                    <label class="control-label" for="pageLayout_edit_name">Name</label>
+                    <input type="text"
+                           ng-model="pageLayout.name"
+                           id="pageLayout_edit_name"
+                           class="form-control"
+                           required
+                           placeholder="e.g.: Product"/>
+                    <span ng-repeat-start="error in pageLayoutErrors.name" ng-repeat-end class="help-block">
+                        {{ error.message }}
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': pageLayoutErrors.layoutPath}">
+                    <label class="control-label" for="pageLayout_edit_layoutPath">Layout Path</label>
+                    <input type="text"
+                           ng-model="pageLayout.layoutPath"
+                           id="pageLayout_edit_layoutPath"
+                           class="form-control"
+                           required
+                           placeholder=""/>
+                    <span ng-repeat-start="error in pageLayoutErrors.layoutPath" ng-repeat-end class="help-block">
+                        {{ error.message }}
+                    </span>
+                </div>
+                <div class="form-group" ng-class="{'has-error': pageLayoutErrors.iconPath}">
+                    <label class="control-label" for="pageLayout_edit_iconPath">Icon Path</label>
+                    <input type="text"
+                           ng-model="pageLayout.iconPath"
+                           id="pageLayout_edit_iconPath"
+                           class="form-control"/>
+                    <span ng-repeat-start="error in pageLayoutErrors.iconPath" ng-repeat-end class="help-block">
+                        {{ error.message }}
+                    </span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset"
+                        class="btn btn-default"
+                        data-dismiss="modal">
+                    <i class="fa fa-chevron-left"></i> Cancel
+                </button>
+                <button type="submit"
+                        class="btn"
+                        ng-class="{'btn-success': !editMode, 'btn-primary': editMode}">
+                    <i class="fa fa-floppy-o"></i> Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="pageLayout_deleteModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <form action="" ng-submit="deletePageLayout(pageLayout)" method="POST" role="form" class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">
+                    Are you ABSOLUTELY sure?
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-warning">
+                    Unexpected bad things will happen if you don't read this!
+                </p>
+
+                <p>
+                    This action <strong>CANNOT</strong> be undone. This will delete the
+                    <strong>{{ pageLayout.name }}</strong> pageLayout permanently.
+                </p>
+
+                <p>
+                    Please type in the name of the Page Layout to confirm.
+                </p>
+
+                <div class="form-group">
+                    <input type="text"
+                           ng-model="pageLayoutTitleToDelete"
+                           id="pageLayout_delete_title"
+                           class="form-control"
+                           required
+                           placeholder=""/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset"
+                        class="btn btn-default"
+                        data-dismiss="modal">
+                    <i class="fa fa-chevron-left"></i> Cancel
+                </button>
+                <button type="submit"
+                        ng-disabled="pageLayoutTitleToDelete !== pageLayout.name"
+                        class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i> I understand the consequences, delete this Page Layout
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
