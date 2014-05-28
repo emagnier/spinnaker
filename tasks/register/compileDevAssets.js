@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('compileDevAssets', [
         'newer:jshint',
+        'newer:scsslint:all',
         'clean:dev',
         'copy:dev',
         'wiredep',
