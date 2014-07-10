@@ -3,7 +3,7 @@ Spinnaker
 
 A CMS written in JavaScript, based on Node.js, Sails.js, Angular and Polymer.
 
-### CURRENTLY IN ACTIVE DEVELOPMENT - NOT READY FOR PRODUCTION USE YET
+### CURRENTLY IN DEVELOPMENT - NOT READY FOR PRODUCTION USE YET
 
 [![Build Status](https://travis-ci.org/emagnier/spinnaker.svg)](https://travis-ci.org/emagnier/spinnaker)
 
